@@ -1,0 +1,51 @@
+package com.testtt;
+
+import java.util.Scanner;
+
+public class Log {
+
+	
+	public void login() {
+		String name = "admin";
+		String password = "admin";
+		int j = 0;
+		for (int i = 3; i > 0; i--) {
+			
+			j = i;
+			j--;
+			Scanner sc = new Scanner(System.in);
+			System.out.println("请输入用户名：");
+			String namein = sc.next();
+			System.out.println("请输入登陆密码：");
+			String passwordin = sc.next();
+			
+			if (namein.equals(name)) {
+				
+				if (passwordin.equals(password)) {
+					System.out.println("登陆成功！");
+					j++;
+					break;
+				}
+				System.out.println("密码输入错误！");
+				
+			}
+			if (passwordin.equals(password)) {
+				
+				System.out.println("用户名输入错误!");
+			} 
+			
+			if (!namein.equals(name) && !passwordin.equals(password)) {
+				System.out.println("用户名输入错误!");
+				System.out.println("密码输入错误！");
+			}
+			
+			if (j > 0) {
+			System.out.println("您还剩余" + j + "次机会!");
+			}
+		}
+		
+		if (j == 0) {
+			System.out.println("登陆失败！");
+		}
+	}
+}
